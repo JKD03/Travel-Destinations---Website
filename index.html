@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="icon" href="logo2.png" type="image/icon type">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Travel</a>
+        <div class="menu-btn">
+
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="place/About.html">About</a>
+                <a href="place/contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="goa.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mumbai.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="delhi.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="shimla.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="agra.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1><b>GOA<br><span>Beaches, nightlife, heritage, cuisine, culture.</span></b></h1>
+            <p>
+                Nestled on India's west coast, Goa beckons with pristine beaches, vibrant nightlife, and a rich cultural tapestry. Visitors indulge in water sports, savor local cuisine, and explore historic sites, experiencing a unique blend of tradition and modernity that makes Goa an irresistible destination for anyone seeking sun-soaked adventures.</p>
+            </p>
+            <a href="/place/goa.html">Read More</a>
+        </div>
+        <div class="content">
+            <h1><b>MUMBAI<br><span>Where Bollywood dazzles and sea vibes sizzle!</span></b></h1>
+            <p>Mumbai, India's pulsating metropolis, marries the glitz of Bollywood with the resilience of a city that never sleeps. Lined with iconic skyscrapers and historic landmarks, it's a melting pot of cultures, where street food titillates taste buds and the Arabian Sea offers a scenic backdrop. From the bustling markets to the glamorous nightlife, Mumbai is an exhilarating tapestry of dreams and dynamism.</p>
+            <a href="/place/mumbai.html">Read More</a>
+        </div>
+        <div class="content">
+            <h1><b>DELHI<br><span>Rich history, diverse culture, vibrant markets.</span></b></h1>
+            <p>Delhi, a captivating city of contrasts, beckons visitors with its rich history, vibrant culture, and modern dynamism. From ancient monuments like the majestic Qutub Minar to bustling markets and diverse cuisine, Delhi offers a compelling blend of tradition and contemporary allure, making it a must-visit destination.</p>
+            <a href="/place/delhi.html">Read More</a>
+        </div>
+        <div class="content">
+            <h1><b>SHIMLA<br><span>Quaint hill station, scenic beauty abounds.</span></b></h1>
+            <p>Nestled in the Himalayas, Shimla captivates with its picturesque landscapes, Victorian architecture, and colonial charm. Visitors relish the crisp mountain air, explore historic landmarks like the Ridge, and savor local delights. A haven for nature lovers and history enthusiasts alike, Shimla promises an enchanting retreat.</p>
+            <a href="/place/shimla.html">Read More</a>
+        </div>
+        <div class="content">
+            <h1><b>AGRA<br><span>Taj Mahal's timeless splendor in Agra.</span></b></h1>
+            <p>Agra, a city steeped in Mughal grandeur, hosts the world-renowned Taj Mahal, an eternal symbol of love. Its pristine white marble domes and intricate architecture captivate visitors, while the Agra Fort and Fatehpur Sikri add to the historical allure. Agra's rich cultural tapestry, bustling markets, and delectable cuisine make it a captivating destination where history, romance, and vibrancy converge in a mesmerizing journey through time.</p>
+            <a href="/place/agra.html">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="https://www.facebook.com/jaskarandeep.singh.750"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jaskarandeep_03/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/jaskarandeep-singh-8191b1236/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click",()=>{
+            menuBtn.classList.toggle("active")
+            navigation.classList.toggle("active")
+        });
+
+
+        const btns     = document.querySelectorAll(".nav-btn");
+        const slides   = document.querySelectorAll(".video-slide")
+        const contents = document.querySelectorAll(".content")
+
+        var sliderNav=function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content)=>{
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click",()=>{
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+<div class="footer">
+    <div class="w-container">
+        <div class="footer-logo">TRAVEL</div>
+        <div>Designed By Jaskarandeep Singh</div>
+    </div>
+</div>
+</html>
